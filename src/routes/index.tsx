@@ -70,7 +70,7 @@ function Home() {
         <SectionHead eyebrow="Services" title="What I can do for you" action={<Link to="/services" className="text-sm text-primary hover:underline">All services →</Link>} />
         <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
           {services.map((s, i) => {
-            const Icon = icons[i];
+            const Icon = icons[i] ?? Code2;
             return (
               <Link key={s.slug} to="/services" hash={s.slug} className="group rounded-3xl border bg-card p-7 transition hover:-translate-y-1 hover:border-primary/50 hover:shadow-elegant">
                 <Icon className="size-6 text-primary" />

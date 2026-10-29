@@ -5,7 +5,7 @@ import { PageHero, seo } from "@/components/site/Layout";
 import { SITE, services, waLink } from "@/data/site";
 
 export const Route = createFileRoute("/contact")({
-  validateSearch: (s: Record<string, unknown>) => ({ service: typeof s.service === "string" ? s.service : undefined }),
+  validateSearch: (s: Record<string, unknown>): { service?: string } => (typeof s["service"] === "string" ? { service: s["service"] } : {}),
   head: () => seo("Contact Ann Tessie — Hire a Web Developer & SEO Specialist", "Start a website, SEO, advertising or automation project with Ann Tessie. Message on WhatsApp or send an enquiry.", "/contact"),
   component: Contact,
 });
@@ -22,7 +22,7 @@ const schema = z.object({
 
 type Errors = Partial<Record<keyof z.infer<typeof schema>, string>>;
 
-function Field({ id, label, error, children }: { id: string; label: string; error?: string; children: React.ReactNode }) {
+function Field({ id, label, error, children }: { id: string; label: string; error?: string | undefined; children: React.ReactNode }) {
   return (
     <div>
       <label htmlFor={id} className="mb-2 block text-sm font-medium">{label}</label>
