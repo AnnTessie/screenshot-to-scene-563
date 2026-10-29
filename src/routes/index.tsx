@@ -4,6 +4,7 @@ import { SITE, services, projects, skills, process, posts, waLink } from "@/data
 import { CTA, SectionHead, seo } from "@/components/site/Layout";
 import { ProjectCard } from "@/components/site/ProjectCard";
 import community from "@/assets/community.jpg";
+import portrait from "@/assets/ann-tessie-portrait.jpg.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => seo("Ann Tessie — Web Developer, SEO & Digital Marketing Specialist", "Freelance web developer and SEO specialist offering website development, Google Ads, Meta Ads and business automation for international businesses.", "/"),
@@ -36,15 +37,10 @@ function Home() {
             </div>
           </div>
 
-          {/* Portrait placeholder — replace with real portrait */}
           <div className="relative mx-auto w-full max-w-sm">
             <div className="absolute -inset-6 rounded-[2.5rem] bg-primary/20 blur-3xl" aria-hidden />
-            <div className="relative aspect-[4/5] overflow-hidden rounded-[2rem] border bg-brand shadow-elegant" role="img" aria-label="Portrait placeholder for Ann Tessie">
-              <div className="absolute inset-0 grid-lines opacity-40" />
-              <div className="absolute inset-0 grid place-items-center">
-                <span className="font-display text-8xl italic text-foreground/80">AT</span>
-              </div>
-              <p className="absolute bottom-5 left-0 right-0 text-center text-xs uppercase tracking-[0.3em] text-muted-foreground">Portrait coming soon</p>
+            <div className="relative aspect-[4/5] overflow-hidden rounded-[2rem] border bg-brand shadow-elegant">
+              <img src={portrait.url} alt="Ann Tessie, web developer and digital marketing specialist" width={1022} height={1280} fetchPriority="high" className="size-full object-cover object-top" />
             </div>
             <div className="absolute -left-8 top-10 rounded-2xl glass px-4 py-3 text-sm animate-float">
               <p className="text-xs text-muted-foreground">Search visibility</p>
