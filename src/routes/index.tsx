@@ -4,7 +4,7 @@ import { SITE, services, projects, skills, process, posts, waLink } from "@/data
 import { CTA, SectionHead, seo } from "@/components/site/Layout";
 import { ProjectCard } from "@/components/site/ProjectCard";
 import community from "@/assets/community.jpg";
-import portrait from "@/assets/ann-tessie-portrait.jpg.asset.json";
+const portrait = "/ann-tessie-new.jpg";
 
 export const Route = createFileRoute("/")({
   head: () => seo("Ann Tessie — Web Developer, SEO & Digital Marketing Specialist", "Freelance web developer and SEO specialist offering website development, Google Ads, Meta Ads and business automation for international businesses.", "/"),
@@ -40,7 +40,7 @@ function Home() {
           <div className="relative mx-auto w-full max-w-sm">
             <div className="absolute -inset-6 rounded-[2.5rem] bg-primary/20 blur-3xl" aria-hidden />
             <div className="relative aspect-[4/5] overflow-hidden rounded-[2rem] border bg-brand shadow-elegant">
-              <img src={portrait.url} alt="Ann Tessie, web developer and digital marketing specialist" width={1022} height={1280} fetchPriority="high" className="size-full object-cover object-top" />
+              <img src="/ann-tessie-new.jpg" alt="Ann Tessie, web developer and digital marketing specialist" width={1022} height={1280} fetchPriority="high" className="size-full object-cover object-top" />
             </div>
             <div className="absolute -left-8 top-10 rounded-2xl glass px-4 py-3 text-sm animate-float">
               <p className="text-xs text-muted-foreground">Search visibility</p>
